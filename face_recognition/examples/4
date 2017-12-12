@@ -1,0 +1,2 @@
+Requirement already satisfied: pillow in c:\users\lenovo\anaconda3\lib\site-packages
+Requirement already satisfied: olefile in c:\users\lenovo\anaconda3\lib\site-packages (from pillow)

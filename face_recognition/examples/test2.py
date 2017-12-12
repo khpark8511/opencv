@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw
 import face_recognition
+import faceswap
 from tkinter import Tk, Listbox ,Label, Button, Entry, filedialog
 
 #얼굴부분 크롭
@@ -139,6 +140,8 @@ class face_detect:
         call_file_name.grid(row = 3, column=3)
 
         self.image2 = window.filename
+    def face_swap(self):
+        faceswap.main(self.image1, self.image2)
 
 window = Tk()
 window.title('얼굴인식프로그램')
@@ -150,6 +153,7 @@ b3 = Button(window, text="얼굴크롭",command=a.face_crop)
 b4 = Button(window, text="얼굴찾기",command=a.callback2)
 b5 = Button(window, text="Make Up", command=a.face_makeup)
 b6 = Button(window, text="Draw Line", command=a.face_drawline)
+b7 = Button(window, text="Face Swap", command=a.face_swap)
 listbox = Listbox(window, width=40, height=10)
 b1.grid(row=0, column=0)		# 버튼 b1을 윈도우 내에 grid 로 배치. 위치는 (0, 0)
 b2.grid(row=0, column=1)		# 버튼 b2를 윈도우 내에 grid 로 배치. 위치는 (1, 1)
@@ -157,7 +161,8 @@ b3.grid(row=0, column=2)
 b4.grid(row=1, column=0)
 b5.grid(row=1, column=1)
 b6.grid(row=1, column=2)
-# listbox.place(x=0, y=100)
-listbox.grid(row=2, column=0 + 1 + 2)
+b7.grid(row=1, column=3)
+listbox.place(x=0, y=100)
+# listbox.grid(row=2, column=0 + 1 + 2)
 
 window.mainloop()
